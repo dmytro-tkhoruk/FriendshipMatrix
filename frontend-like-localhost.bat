@@ -1,0 +1,2 @@
+static "Frontend/public" &
+PAUSE
