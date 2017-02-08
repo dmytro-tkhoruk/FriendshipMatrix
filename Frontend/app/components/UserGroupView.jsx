@@ -12,7 +12,7 @@ class UserGroupView extends React.Component {
                 <div className="group-name">{group.groupName}</div>
                 {
                     group.users.map((item, n)=>(
-                        <UserView {...this.props} user={item} number={n}/>
+                        <UserView {...this.props} key={n} user={item} number={n}/>
                     ))
                 }
             </div>

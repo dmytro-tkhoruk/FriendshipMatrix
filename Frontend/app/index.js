@@ -45,7 +45,7 @@ const initialState = {
         ]
     },
     network: {
-        showProgressBar: false
+        showLoader: false
     },
     auth:{
         //isAuthorized: localStorage.get(AUTH_TOKEN)

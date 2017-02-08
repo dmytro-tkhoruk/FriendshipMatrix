@@ -29,6 +29,12 @@ class ClientApi {
     }
 
     post(requestUrl, payload = {}, headers = false) {
+
+        console.log("requestUrl");
+        console.log(requestUrl);
+        console.log(payload);
+        console.log(headers);
+
         return this.request({
             url: requestUrl,
             method: 'post',
@@ -72,6 +78,8 @@ class ClientApi {
         // Append 'payload' for data methods
         if (isPayloadMethod) { config.data = body; }
 
+        console.log("config");
+        console.log(config);
 
         return axios(config)
             .then(({data}) => Promise.resolve(data))

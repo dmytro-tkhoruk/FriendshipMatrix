@@ -1,3 +1,5 @@
+'use strict';
+
 import * as snackbarConstants from '../constants/snackbar.constants';
 
 export const setSnackBarMsg = (message = "") => ({

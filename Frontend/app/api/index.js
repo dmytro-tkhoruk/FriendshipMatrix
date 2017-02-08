@@ -10,7 +10,7 @@ export default function({apiPrefix} = {}) {
     const api = new ClientApi({ prefix: apiPrefix });
 
     return {
-        authorization: new AuthApi({ apiClient: api }),
+        auth: new AuthApi({ apiClient: api }),
         users: new UsersApi({ apiClient: api })
     };
 }

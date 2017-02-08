@@ -1,11 +1,14 @@
 'use strict';
 
-import * as networkConstants from '../constants/network.constants';
-import * as authConstants from '../constants/auth.constants';
-import * as snackbarConstants from '../constants/snackbar.constants';
+import * as usersConstants from '../constants/users.constants';
 
 export default function(state = {}, action) {
     switch (action.type) {
+        case usersConstants.UPDATE_USERS: {
+            return {...action.users} ;
+        }
+            break;
+
         default: return state;
     }
 }

@@ -10,6 +10,7 @@ import { setSnackBarMsg } from '../actions/snackbar.actions';
 
 
 import SnackbarView from "../components/SnackbarView.jsx";
+import LoaderView from "../components/LoaderView.jsx";
 import ProfileContainer from "./Profile.container.jsx";
 import LoginContainer from "./Login.container.jsx";
 
@@ -26,6 +27,7 @@ class MainContainer extends React.Component {
 
         return (
             <div>
+                <LoaderView {...this.props}/>
                 <SnackbarView {...this.props}/>
                 {hasChildren?this.props.children:content}
             </div>
@@ -36,8 +38,8 @@ class MainContainer extends React.Component {
 function mapStateToProps(state) {
     return {
         isAuthorized: state.auth.isAuthorized,
-        showProgressBar: state.network.showProgressBar,
-        snackBarMsg: state.snackbar.snackBarMsg
+        snackBarMsg: state.snackbar.snackBarMsg,
+        showLoader: state.network.showLoader
     };
 }
 

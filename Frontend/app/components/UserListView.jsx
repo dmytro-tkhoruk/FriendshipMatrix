@@ -11,7 +11,7 @@ class UserListView extends React.Component {
             <div className="users-list">
                 {
                     usersList.map((item, n)=>(
-                        <UserGroupView {...this.props} group={item}/>
+                        <UserGroupView {...this.props} key={n} group={item}/>
                     ))
                 }
             </div>

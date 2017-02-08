@@ -1,3 +1,5 @@
+'use strict';
+
 import * as networkConstants from '../constants/network.constants';
 import * as snackbarConstants from '../constants/snackbar.constants';
 

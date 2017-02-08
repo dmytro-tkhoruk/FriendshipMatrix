@@ -1,19 +1,21 @@
 'use strict';
+
 import api from '../config/apiSingleton';
 import LocalStorage from '../storage/localStorage'
 
 import * as networkConstants from '../constants/network.constants';
+import * as usersConstants from '../constants/users.constants';
 import * as authConstants from '../constants/auth.constants';
 
 export function login(params = {}) {
     return (dispatch) => {
         dispatch({
-            type: networkConstants.SHOW_PROGRESSBAR
+            type: networkConstants.SHOW_LOADER
         });
 
-        api.authorization.login(params)
+        api.auth.login(params)
             .then((resp) => {
-                let token = resp.Token;
+                const token = resp.Token;
 
                 if (token) {
                     LocalStorage.set(authConstants.AUTH_TOKEN, token);
@@ -22,7 +24,16 @@ export function login(params = {}) {
                 dispatch({
                     type: authConstants.SET_IS_AUTHORIZED,
                     isAuthorized: true
-                })
+                });
+
+                dispatch({
+                    type: usersConstants.UPDATE_USERS,
+                    users: resp.users
+                });
+
+                dispatch({
+                    type: networkConstants.HIDE_LOADER
+                });
             })
             .catch((resp) => {
                 dispatch({
@@ -35,9 +46,17 @@ export function login(params = {}) {
 
 export function logout() {
     LocalStorage.remove(authConstants.AUTH_TOKEN);
-    return {
-        type: authConstants.SET_IS_AUTHORIZED,
-        isAuthorized: false
-    }
+
+    return (dispatch) => {
+        dispatch({
+            type: authConstants.SET_IS_AUTHORIZED,
+            isAuthorized: false
+        });
+
+        dispatch({
+            type: usersConstants.UPDATE_USERS,
+            users: {}
+        });
+    };
 }
 

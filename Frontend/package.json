@@ -22,6 +22,7 @@
     "material-design-icons": "^3.0.1",
     "material-ui": "^0.16.4",
     "material-ui-chip-input": "^0.11.2",
+    "query-string": "^4.2.3",
     "react": "^15.4.1",
     "react-cassette-player": "^1.1.2",
     "react-cookie": "^1.0.4",
@@ -31,9 +32,7 @@
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
-    "redux-thunk": "^2.1.0",
-    "shortid": "^2.2.6",
-    "query-string": "^4.2.3"
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",

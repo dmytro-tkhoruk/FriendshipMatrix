@@ -5,8 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 class ProfileView extends React.Component {
     render() {
-        console.log(this.props);
-
         const {currentUser, handleLogout} = this.props;
         const imgSrc= `./img/${currentUser.gender}.png`;
 

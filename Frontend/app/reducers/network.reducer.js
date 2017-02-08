@@ -7,30 +7,23 @@ export default function(state = {}, action) {
         case networkConstants.NETWORK_ERROR: {
             return {
                 ...state,
-                showProgressBar: false
-            };
-        }
-            break;
-        case networkConstants.NETWORK_SUCCESS: {
-            return {
-                ...state,
-                showProgressBar: false
+                showLoader: false
             };
         }
             break;
 
-        case networkConstants.SHOW_PROGRESSBAR: {
+        case networkConstants.SHOW_LOADER: {
             return {
                 ...state,
-                showProgressBar: true
+                showLoader: true
             };
         }
             break;
 
-        case networkConstants.HIDE_PROGRESSBAR: {
+        case networkConstants.HIDE_LOADER: {
             return {
                 ...state,
-                showProgressBar: false
+                showLoader: false
             };
         }
             break;
