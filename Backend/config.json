@@ -9,5 +9,7 @@
     "db_name": "FrindshipMatrix",
     "user": "",
     "password": ""
-  }
+  },
+
+  "jwtSecret": "$9&.o(_i-ewoBg,`ET+=QI?`j~Pdk78333**^555^=w(qVJ!t\"JG*5p\\YE(pu;cC9m$I4MtW|+++++333%#%$%^%#@3ME3gW-&k&rt\"6RQu].:e7\tcUMP\"gsg8H6V06`<p7=25,Il@\\Gp+@Pi"
 }
